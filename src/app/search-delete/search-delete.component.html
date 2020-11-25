@@ -1,0 +1,96 @@
+  
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+    <h1>{{messageDelete}}</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Below information is required to delete topic.</legend>
+
+                    <div class="form-group">
+                        <label>Topic Id: </label>
+                        <input required type="text" [(ngModel)]="topicId"   name="description" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Delete" (click)="doSearchDelete()" />
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Below information is required to add topic. <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="Description"><span class="req">* </span> Topic Id: </label>
+                        <input required type="text" [(ngModel)]="topic.id"   name="id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description"><span class="req">* </span> Topic Name: </label>
+                        <input required type="text" [(ngModel)]="topic.name"   name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description"><span class="req">* </span> Topic Description: </label>
+                        <input required type="text" [(ngModel)]="topic.description"   name="description" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_update" value="Update" (click)="doUpdateTopic()" />
+                    </div>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Below information is required to get topic. <span class="req"><small>
+                                required *</small></span></legend>
+
+                    <div class="form-group">
+                        <label for="Id"><span class="req">* </span> Topic Id: </label>
+                        <input required type="text" [(ngModel)]="topictoFetch"   name="Id" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Get" (click)="doSearchTopic()" />
+                    </div>
+                    <table class="table">
+                        <thead> 
+                          <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{topicFetched.id}}</td>
+                            <td>{{topicFetched.name}}</td>
+                            <td>{{topicFetched.description}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+</div>
+<div>
+    <a class="nav-link" routerLink="/home">HOME</a>
+</div>
